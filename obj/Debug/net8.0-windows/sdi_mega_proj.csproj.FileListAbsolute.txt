@@ -14,3 +14,4 @@ C:\University\5 semester\sharp projects\parallel\sdi_mega_proj\obj\Debug\net8.0-
 C:\University\5 semester\sharp projects\parallel\sdi_mega_proj\obj\Debug\net8.0-windows\sdi_mega_proj.pdb
 C:\University\5 semester\sharp projects\parallel\sdi_mega_proj\obj\Debug\net8.0-windows\sdi_mega_proj.genruntimeconfig.cache
 C:\University\5 semester\sharp projects\parallel\sdi_mega_proj\obj\Debug\net8.0-windows\ref\sdi_mega_proj.dll
+C:\University\5 semester\sharp projects\parallel\sdi_mega_proj\obj\Debug\net8.0-windows\sdi_mega_proj.sourcelink.json
