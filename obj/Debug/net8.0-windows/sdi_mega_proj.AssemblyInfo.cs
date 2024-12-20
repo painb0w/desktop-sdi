@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("sdi_mega_proj")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7eb11100fc263148869b1dfdefe7b26082f49322")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a4d7fe6ee00d75d2549ff85456edeb24555fd50c")]
 [assembly: System.Reflection.AssemblyProductAttribute("sdi_mega_proj")]
 [assembly: System.Reflection.AssemblyTitleAttribute("sdi_mega_proj")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

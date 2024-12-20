@@ -15,3 +15,8 @@ C:\University\5 semester\sharp projects\parallel\sdi_mega_proj\obj\Debug\net8.0-
 C:\University\5 semester\sharp projects\parallel\sdi_mega_proj\obj\Debug\net8.0-windows\sdi_mega_proj.genruntimeconfig.cache
 C:\University\5 semester\sharp projects\parallel\sdi_mega_proj\obj\Debug\net8.0-windows\ref\sdi_mega_proj.dll
 C:\University\5 semester\sharp projects\parallel\sdi_mega_proj\obj\Debug\net8.0-windows\sdi_mega_proj.sourcelink.json
+C:\University\5 semester\sharp projects\parallel\sdi_mega_proj\bin\Debug\net8.0-windows\Bogus.dll
+C:\University\5 semester\sharp projects\parallel\sdi_mega_proj\bin\Debug\net8.0-windows\Faker.Net.6.0.dll
+C:\University\5 semester\sharp projects\parallel\sdi_mega_proj\bin\Debug\net8.0-windows\de-DE\Faker.Net.6.0.resources.dll
+C:\University\5 semester\sharp projects\parallel\sdi_mega_proj\obj\Debug\net8.0-windows\sdi_mega_proj.csproj.AssemblyReference.cache
+C:\University\5 semester\sharp projects\parallel\sdi_mega_proj\obj\Debug\net8.0-windows\sdi_mega.1E53AF9A.Up2Date

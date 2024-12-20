@@ -44,6 +44,16 @@
       "frameworks": {
         "net8.0-windows7.0": {
           "targetAlias": "net8.0-windows",
+          "dependencies": {
+            "Bogus": {
+              "target": "Package",
+              "version": "[35.6.1, )"
+            },
+            "Faker.Net": {
+              "target": "Package",
+              "version": "[2.0.163, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

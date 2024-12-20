@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "hrtKEahGPLSaYBb4UE8XdSov2nsw12iA/Aet2bs36Z9cOnw2vBoR8+pAzBdRGkqfBjcs7lni5WTUn7BiwhJ14A==",
+  "dgSpecHash": "Mg1Vv77vK1Uq8lZMj+sflvyMWm/ow63cxE8ym2RfnCneocDcywM+JowZmxG6uLHjCwBn8Q9IxKwgrH+ofzcu7g==",
   "success": true,
   "projectFilePath": "C:\\University\\5 semester\\sharp projects\\parallel\\sdi_mega_proj\\sdi_mega_proj.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Pavel\\.nuget\\packages\\bogus\\35.6.1\\bogus.35.6.1.nupkg.sha512",
+    "C:\\Users\\Pavel\\.nuget\\packages\\faker.net\\2.0.163\\faker.net.2.0.163.nupkg.sha512",
+    "C:\\Users\\Pavel\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\Pavel\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
   "logs": []
 }
