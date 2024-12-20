@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "sdi_mega_proj/1.0.0": {
+        "runtime": {
+          "sdi_mega_proj.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "sdi_mega_proj/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

@@ -1,0 +1,16 @@
+C:\University\5 semester\sharp projects\parallel\sdi_mega_proj\bin\Debug\net8.0-windows\sdi_mega_proj.exe
+C:\University\5 semester\sharp projects\parallel\sdi_mega_proj\bin\Debug\net8.0-windows\sdi_mega_proj.deps.json
+C:\University\5 semester\sharp projects\parallel\sdi_mega_proj\bin\Debug\net8.0-windows\sdi_mega_proj.runtimeconfig.json
+C:\University\5 semester\sharp projects\parallel\sdi_mega_proj\bin\Debug\net8.0-windows\sdi_mega_proj.dll
+C:\University\5 semester\sharp projects\parallel\sdi_mega_proj\bin\Debug\net8.0-windows\sdi_mega_proj.pdb
+C:\University\5 semester\sharp projects\parallel\sdi_mega_proj\obj\Debug\net8.0-windows\sdi_mega_proj.Form1.resources
+C:\University\5 semester\sharp projects\parallel\sdi_mega_proj\obj\Debug\net8.0-windows\sdi_mega_proj.csproj.GenerateResource.cache
+C:\University\5 semester\sharp projects\parallel\sdi_mega_proj\obj\Debug\net8.0-windows\sdi_mega_proj.GeneratedMSBuildEditorConfig.editorconfig
+C:\University\5 semester\sharp projects\parallel\sdi_mega_proj\obj\Debug\net8.0-windows\sdi_mega_proj.AssemblyInfoInputs.cache
+C:\University\5 semester\sharp projects\parallel\sdi_mega_proj\obj\Debug\net8.0-windows\sdi_mega_proj.AssemblyInfo.cs
+C:\University\5 semester\sharp projects\parallel\sdi_mega_proj\obj\Debug\net8.0-windows\sdi_mega_proj.csproj.CoreCompileInputs.cache
+C:\University\5 semester\sharp projects\parallel\sdi_mega_proj\obj\Debug\net8.0-windows\sdi_mega_proj.dll
+C:\University\5 semester\sharp projects\parallel\sdi_mega_proj\obj\Debug\net8.0-windows\refint\sdi_mega_proj.dll
+C:\University\5 semester\sharp projects\parallel\sdi_mega_proj\obj\Debug\net8.0-windows\sdi_mega_proj.pdb
+C:\University\5 semester\sharp projects\parallel\sdi_mega_proj\obj\Debug\net8.0-windows\sdi_mega_proj.genruntimeconfig.cache
+C:\University\5 semester\sharp projects\parallel\sdi_mega_proj\obj\Debug\net8.0-windows\ref\sdi_mega_proj.dll
