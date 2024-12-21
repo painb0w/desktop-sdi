@@ -28,7 +28,15 @@ namespace sdi_mega_proj
             GenerateDataButton.Enabled = false;
             GenerateDataButton.Text = "Generating...";
 
-            employees = await Task.Run(() => DataGenerator.GenerateEmployees(1000)); // установил фиксированное число сотрудников
+            employees = await Task.Run(() => {
+                return DataGenerator.GenerateEmployees(1000);
+            }); // установил фиксированное число сотрудников
+
+            //await Task.Run(() =>
+            //{
+            //    Thread.Sleep(5000);
+            //    var employees = DataGenerator.GenerateEmployees(1000);
+            //}); //для теста асинхронности
 
             GenerateDataButton.Enabled = true;
             GenerateDataButton.Text = "Generate data";
@@ -68,6 +76,7 @@ namespace sdi_mega_proj
             var plinqResult = await Task.Run(() =>
             {
                 //MessageBox.Show($"thread of Task.Run: {Thread.CurrentThread.ManagedThreadId}");
+                Thread.Sleep(10000);
                 return DataProcessor.FilterOrdersByNamePLINQ(employees, filterText, filterType);
             });
             stopwatch.Stop();
@@ -114,15 +123,27 @@ namespace sdi_mega_proj
             var plinqResult = await Task.Run(() =>
             {
                 //MessageBox.Show($"thread of Task.Run: {Thread.CurrentThread.ManagedThreadId}");
+                Thread.Sleep(10000);
                 return DataProcessor.FilterOrdersByDatePLINQ(employees, selectedDate, filterType);
             });
+
             stopwatch.Stop();
             ExecutionTimeLabel.Text = $"Execution time: {stopwatch.ElapsedMilliseconds} ms";
 
             //MessageBox.Show($"UI thread: {Thread.CurrentThread.ManagedThreadId}");
-            QueryResultsGrid.DataSource = plinqResult;
-                    //.Select(o => new { o.OrderDate, o.OrderAmount })
-                    //.ToList();
+            QueryResultsGrid.DataSource = plinqResult.Take(1000);
+            //.Select(o => new { o.OrderDate, o.OrderAmount })
+            //.ToList();
+
+            //ThreadPool.QueueUserWorkItem(_ =>
+            //{
+            //    //MessageBox.Show($"thread of Task.Run: {Thread.CurrentThread.ManagedThreadId}");
+            //    var result =  DataProcessor.FilterOrdersByDatePLINQ(employees, selectedDate, filterType);
+            //    QueryResultsGrid.BeginInvoke(() =>
+            //    {
+            //        QueryResultsGrid.DataSource = result;
+            //    });
+            //});
         }
 
 
@@ -139,7 +160,10 @@ namespace sdi_mega_proj
             bool ascending = sortType == "Ascending";
 
             var stopwatch = Stopwatch.StartNew();
-            var sortedEmployees = await Task.Run(() => DataProcessor.SortEmployeesByAverageOrderLINQ(employees, ascending));
+            var sortedEmployees = await Task.Run(() => {
+                Thread.Sleep(10000);
+                return DataProcessor.SortEmployeesByAverageOrderLINQ(employees, ascending);
+            });
             stopwatch.Stop();
             ExecutionTimeLabel.Text = $"Execution time: {stopwatch.ElapsedMilliseconds} ms";
 
