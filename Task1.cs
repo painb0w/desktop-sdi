@@ -11,24 +11,29 @@ public static class TextAnalysisHelper
     {
         var wordSet = new HashSet<string>(words, StringComparer.OrdinalIgnoreCase);
 
-        var frequencies = new ConcurrentDictionary<string, int>();
-
-        Parallel.ForEach(files, file =>
+        // map
+        var localFrequencies = files.AsParallel().Select(file =>
         {
             var text = File.ReadAllText(file);
 
-            var localFrequencies = text
+            return text
                 .Split(new[] { ' ', '\n', '\r', '.', ',', '!', '?', ';', ':', '-', '(', ')' }, StringSplitOptions.RemoveEmptyEntries)
                 .Where(word => wordSet.Contains(word, StringComparer.OrdinalIgnoreCase))
                 .GroupBy(word => word, StringComparer.OrdinalIgnoreCase)
                 .ToDictionary(g => g.Key, g => g.Count());
+        }).ToList();
 
-            foreach (var kvp in localFrequencies)
+        // reduce
+        var globalFrequencies = new ConcurrentDictionary<string, int>();
+
+        foreach (var freq in localFrequencies)
+        {
+            foreach (var kvp in freq)
             {
-                frequencies.AddOrUpdate(kvp.Key, kvp.Value, (key, oldValue) => oldValue + kvp.Value);
+                globalFrequencies.AddOrUpdate(kvp.Key, kvp.Value, (key, oldValue) => oldValue + kvp.Value);
             }
-        });
+        }
 
-        return frequencies.ToDictionary(kvp => kvp.Key, kvp => kvp.Value);
+        return globalFrequencies.ToDictionary(kvp => kvp.Key, kvp => kvp.Value);
     }
 }
