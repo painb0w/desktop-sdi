@@ -29,8 +29,13 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            WordListTextBox = new TextBox();
+            label6 = new Label();
+            TimeLabel = new Label();
+            ApplySearchButton = new Button();
             panel2 = new Panel();
             panel3 = new Panel();
+            ExecutionTimeLabel = new Label();
             ApplyFilterDateButton = new Button();
             label4 = new Label();
             label1 = new Label();
@@ -48,20 +53,61 @@
             QueryResultsGrid = new DataGridView();
             OrdersGrid = new DataGridView();
             EmployeesGrid = new DataGridView();
-            ExecutionTimeLabel = new Label();
+            WordListGrid = new DataGridView();
+            panel1.SuspendLayout();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)QueryResultsGrid).BeginInit();
             ((System.ComponentModel.ISupportInitialize)OrdersGrid).BeginInit();
             ((System.ComponentModel.ISupportInitialize)EmployeesGrid).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)WordListGrid).BeginInit();
             SuspendLayout();
             // 
             // panel1
             // 
+            panel1.Controls.Add(WordListTextBox);
+            panel1.Controls.Add(label6);
+            panel1.Controls.Add(TimeLabel);
+            panel1.Controls.Add(ApplySearchButton);
             panel1.Dock = DockStyle.Left;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(347, 631);
             panel1.TabIndex = 0;
+            // 
+            // WordListTextBox
+            // 
+            WordListTextBox.Location = new Point(12, 378);
+            WordListTextBox.Name = "WordListTextBox";
+            WordListTextBox.Size = new Size(329, 27);
+            WordListTextBox.TabIndex = 2;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(71, 344);
+            label6.Name = "label6";
+            label6.Size = new Size(197, 20);
+            label6.TabIndex = 3;
+            label6.Text = "Enter list of words for search";
+            label6.Click += label6_Click;
+            // 
+            // TimeLabel
+            // 
+            TimeLabel.AutoSize = true;
+            TimeLabel.Location = new Point(21, 428);
+            TimeLabel.Name = "TimeLabel";
+            TimeLabel.Size = new Size(0, 20);
+            TimeLabel.TabIndex = 4;
+            // 
+            // ApplySearchButton
+            // 
+            ApplySearchButton.Location = new Point(55, 517);
+            ApplySearchButton.Name = "ApplySearchButton";
+            ApplySearchButton.Size = new Size(226, 29);
+            ApplySearchButton.TabIndex = 5;
+            ApplySearchButton.Text = "Search";
+            ApplySearchButton.UseVisualStyleBackColor = true;
+            ApplySearchButton.Click += ApplySearchButton_Click;
             // 
             // panel2
             // 
@@ -97,6 +143,14 @@
             panel3.Name = "panel3";
             panel3.Size = new Size(418, 631);
             panel3.TabIndex = 0;
+            // 
+            // ExecutionTimeLabel
+            // 
+            ExecutionTimeLabel.AutoSize = true;
+            ExecutionTimeLabel.Location = new Point(158, 329);
+            ExecutionTimeLabel.Name = "ExecutionTimeLabel";
+            ExecutionTimeLabel.Size = new Size(0, 20);
+            ExecutionTimeLabel.TabIndex = 17;
             // 
             // ApplyFilterDateButton
             // 
@@ -273,19 +327,27 @@
             EmployeesGrid.Size = new Size(418, 113);
             EmployeesGrid.TabIndex = 0;
             // 
-            // ExecutionTimeLabel
+            // WordListGrid
             // 
-            ExecutionTimeLabel.AutoSize = true;
-            ExecutionTimeLabel.Location = new Point(158, 329);
-            ExecutionTimeLabel.Name = "ExecutionTimeLabel";
-            ExecutionTimeLabel.Size = new Size(0, 20);
-            ExecutionTimeLabel.TabIndex = 17;
+            WordListGrid.AllowUserToAddRows = false;
+            WordListGrid.AllowUserToDeleteRows = false;
+            WordListGrid.AllowUserToResizeColumns = false;
+            WordListGrid.AllowUserToResizeRows = false;
+            WordListGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            WordListGrid.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            WordListGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            WordListGrid.Location = new Point(0, 0);
+            WordListGrid.Name = "WordListGrid";
+            WordListGrid.RowHeadersWidth = 51;
+            WordListGrid.Size = new Size(347, 326);
+            WordListGrid.TabIndex = 1;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1250, 631);
+            Controls.Add(WordListGrid);
             Controls.Add(panel2);
             Controls.Add(panel3);
             Controls.Add(panel1);
@@ -295,11 +357,14 @@
             Name = "Form1";
             Text = "Приложение";
             Load += Form1_Load;
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)QueryResultsGrid).EndInit();
             ((System.ComponentModel.ISupportInitialize)OrdersGrid).EndInit();
             ((System.ComponentModel.ISupportInitialize)EmployeesGrid).EndInit();
+            ((System.ComponentModel.ISupportInitialize)WordListGrid).EndInit();
             ResumeLayout(false);
         }
 
@@ -326,5 +391,10 @@
         private Label label4;
         private Label label1;
         private Label ExecutionTimeLabel;
+        private DataGridView WordListGrid;
+        private TextBox WordListTextBox;
+        private Label label6;
+        private Label TimeLabel;
+        private Button ApplySearchButton;
     }
 }

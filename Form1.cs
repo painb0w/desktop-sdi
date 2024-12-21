@@ -7,6 +7,7 @@ namespace sdi_mega_proj
     public partial class Form1 : Form
     {
         private List<Employee> employees;
+        private readonly string textsDirectoryPath = @"C:/University/5 semester/sharp projects/parallel/texts"; // указать путь к директориями с файлами текстов
 
         public Form1()
         {
@@ -28,7 +29,8 @@ namespace sdi_mega_proj
             GenerateDataButton.Enabled = false;
             GenerateDataButton.Text = "Generating...";
 
-            employees = await Task.Run(() => {
+            employees = await Task.Run(() =>
+            {
                 return DataGenerator.GenerateEmployees(1000);
             }); // установил фиксированное число сотрудников
 
@@ -97,16 +99,6 @@ namespace sdi_mega_proj
             //MessageBox.Show($"PLINQ execution time: {plinqTime}");
         }
 
-
-        private async Task<string> MeasureExecutionTimeAsync(Func<Task> action)
-        {
-            var stopwatch = Stopwatch.StartNew();
-            await action(); 
-            stopwatch.Stop();
-
-            return $"Query execution time: {stopwatch.ElapsedMilliseconds} ms.";
-        }
-
         private async void ApplyFilterDateButton_Click(object sender, EventArgs e)
         {
             DateTime selectedDate = DateTimePicker.Value;
@@ -131,9 +123,8 @@ namespace sdi_mega_proj
             ExecutionTimeLabel.Text = $"Execution time: {stopwatch.ElapsedMilliseconds} ms";
 
             //MessageBox.Show($"UI thread: {Thread.CurrentThread.ManagedThreadId}");
-            QueryResultsGrid.DataSource = plinqResult.Take(1000);
-            //.Select(o => new { o.OrderDate, o.OrderAmount })
-            //.ToList();
+            QueryResultsGrid.DataSource = plinqResult;
+            //.Take(1000).ToList();
 
             //ThreadPool.QueueUserWorkItem(_ =>
             //{
@@ -160,7 +151,8 @@ namespace sdi_mega_proj
             bool ascending = sortType == "Ascending";
 
             var stopwatch = Stopwatch.StartNew();
-            var sortedEmployees = await Task.Run(() => {
+            var sortedEmployees = await Task.Run(() =>
+            {
                 Thread.Sleep(10000);
                 return DataProcessor.SortEmployeesByAverageOrderLINQ(employees, ascending);
             });
@@ -174,6 +166,73 @@ namespace sdi_mega_proj
                     AverageOrderAmount = e.Orders.Average(o => o.OrderAmount)
                 })
                 .ToList();
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private async void ApplySearchButton_Click(object sender, EventArgs e)
+        {
+            var words = WordListTextBox.Text
+                .Split(new[] { ' ', '\n', '\r', ',', '.', ';' }, StringSplitOptions.RemoveEmptyEntries)
+                .Select(word => word.Trim())
+                .Where(word => !string.IsNullOrWhiteSpace(word))
+                .ToArray();
+
+            if (words.Length == 0)
+            {
+                MessageBox.Show("Enter words for search first !");
+                return;
+            }
+
+            if (!Directory.Exists(textsDirectoryPath))
+            {
+                MessageBox.Show($"No such directory: {textsDirectoryPath} !");
+                return;
+            }
+
+            var files = Directory.GetFiles(textsDirectoryPath, "*.txt");
+
+            if (files.Length == 0)
+            {
+                MessageBox.Show($"No txt files in directory {textsDirectoryPath} !");
+                return;
+            }
+
+            if (WordListGrid.Columns.Count == 0)
+            {
+                WordListGrid.Columns.Add("Word", "Word");        
+                WordListGrid.Columns.Add("Frequency", "Frequency"); 
+            }
+
+            var stopwatch = Stopwatch.StartNew();
+
+            try
+            {
+                var wordFrequencies = await Task.Run(() =>
+                {
+                    Thread.Sleep(10000);
+                    return TextAnalysisHelper.ProcessTexts(files, words);
+                });
+
+                stopwatch.Stop();
+
+                Invoke((MethodInvoker)delegate
+                {
+                    TimeLabel.Text = $"Search process execution time: {stopwatch.ElapsedMilliseconds} мс";
+                    WordListGrid.Rows.Clear();
+                    foreach (var kvp in wordFrequencies)
+                    {
+                        WordListGrid.Rows.Add(kvp.Key, kvp.Value);
+                    }
+                });
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error while text processing occured: {ex.Message}");
+            }
         }
     }
 }
