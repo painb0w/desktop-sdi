@@ -1,13 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "Mg1Vv77vK1Uq8lZMj+sflvyMWm/ow63cxE8ym2RfnCneocDcywM+JowZmxG6uLHjCwBn8Q9IxKwgrH+ofzcu7g==",
+  "dgSpecHash": "aX1XevkSHSo=",
   "success": true,
-  "projectFilePath": "C:\\University\\5 semester\\sharp projects\\parallel\\sdi_mega_proj\\sdi_mega_proj.csproj",
+  "projectFilePath": "D:\\Университет\\3 курс 5 семестр\\Параллельные вычисления\\07\\sdi_mega_proj\\sdi_mega_proj.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Pavel\\.nuget\\packages\\bogus\\35.6.1\\bogus.35.6.1.nupkg.sha512",
-    "C:\\Users\\Pavel\\.nuget\\packages\\faker.net\\2.0.163\\faker.net.2.0.163.nupkg.sha512",
-    "C:\\Users\\Pavel\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
-    "C:\\Users\\Pavel\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+    "C:\\Users\\efart\\.nuget\\packages\\bogus\\35.6.1\\bogus.35.6.1.nupkg.sha512",
+    "C:\\Users\\efart\\.nuget\\packages\\faker.net\\2.0.163\\faker.net.2.0.163.nupkg.sha512",
+    "C:\\Users\\efart\\.nuget\\packages\\htmlagilitypack\\1.11.71\\htmlagilitypack.1.11.71.nupkg.sha512",
+    "C:\\Users\\efart\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\efart\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
   ],
   "logs": []
 }

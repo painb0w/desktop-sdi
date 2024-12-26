@@ -20,3 +20,27 @@ C:\University\5 semester\sharp projects\parallel\sdi_mega_proj\bin\Debug\net8.0-
 C:\University\5 semester\sharp projects\parallel\sdi_mega_proj\bin\Debug\net8.0-windows\de-DE\Faker.Net.6.0.resources.dll
 C:\University\5 semester\sharp projects\parallel\sdi_mega_proj\obj\Debug\net8.0-windows\sdi_mega_proj.csproj.AssemblyReference.cache
 C:\University\5 semester\sharp projects\parallel\sdi_mega_proj\obj\Debug\net8.0-windows\sdi_mega.1E53AF9A.Up2Date
+C:\University\5 semester\sharp projects\parallel\sdi_mega_proj\bin\Debug\net8.0-windows\HtmlAgilityPack.dll
+D:\Университет\3 курс 5 семестр\Параллельные вычисления\07\sdi_mega_proj\bin\Debug\net8.0-windows\sdi_mega_proj.exe
+D:\Университет\3 курс 5 семестр\Параллельные вычисления\07\sdi_mega_proj\bin\Debug\net8.0-windows\sdi_mega_proj.deps.json
+D:\Университет\3 курс 5 семестр\Параллельные вычисления\07\sdi_mega_proj\bin\Debug\net8.0-windows\sdi_mega_proj.runtimeconfig.json
+D:\Университет\3 курс 5 семестр\Параллельные вычисления\07\sdi_mega_proj\bin\Debug\net8.0-windows\sdi_mega_proj.dll
+D:\Университет\3 курс 5 семестр\Параллельные вычисления\07\sdi_mega_proj\bin\Debug\net8.0-windows\sdi_mega_proj.pdb
+D:\Университет\3 курс 5 семестр\Параллельные вычисления\07\sdi_mega_proj\bin\Debug\net8.0-windows\Bogus.dll
+D:\Университет\3 курс 5 семестр\Параллельные вычисления\07\sdi_mega_proj\bin\Debug\net8.0-windows\Faker.Net.6.0.dll
+D:\Университет\3 курс 5 семестр\Параллельные вычисления\07\sdi_mega_proj\bin\Debug\net8.0-windows\HtmlAgilityPack.dll
+D:\Университет\3 курс 5 семестр\Параллельные вычисления\07\sdi_mega_proj\bin\Debug\net8.0-windows\de-DE\Faker.Net.6.0.resources.dll
+D:\Университет\3 курс 5 семестр\Параллельные вычисления\07\sdi_mega_proj\obj\Debug\net8.0-windows\sdi_mega_proj.csproj.AssemblyReference.cache
+D:\Университет\3 курс 5 семестр\Параллельные вычисления\07\sdi_mega_proj\obj\Debug\net8.0-windows\sdi_mega_proj.Form1.resources
+D:\Университет\3 курс 5 семестр\Параллельные вычисления\07\sdi_mega_proj\obj\Debug\net8.0-windows\sdi_mega_proj.csproj.GenerateResource.cache
+D:\Университет\3 курс 5 семестр\Параллельные вычисления\07\sdi_mega_proj\obj\Debug\net8.0-windows\sdi_mega_proj.GeneratedMSBuildEditorConfig.editorconfig
+D:\Университет\3 курс 5 семестр\Параллельные вычисления\07\sdi_mega_proj\obj\Debug\net8.0-windows\sdi_mega_proj.AssemblyInfoInputs.cache
+D:\Университет\3 курс 5 семестр\Параллельные вычисления\07\sdi_mega_proj\obj\Debug\net8.0-windows\sdi_mega_proj.AssemblyInfo.cs
+D:\Университет\3 курс 5 семестр\Параллельные вычисления\07\sdi_mega_proj\obj\Debug\net8.0-windows\sdi_mega_proj.csproj.CoreCompileInputs.cache
+D:\Университет\3 курс 5 семестр\Параллельные вычисления\07\sdi_mega_proj\obj\Debug\net8.0-windows\sdi_mega_proj.sourcelink.json
+D:\Университет\3 курс 5 семестр\Параллельные вычисления\07\sdi_mega_proj\obj\Debug\net8.0-windows\sdi_mega.1E53AF9A.Up2Date
+D:\Университет\3 курс 5 семестр\Параллельные вычисления\07\sdi_mega_proj\obj\Debug\net8.0-windows\sdi_mega_proj.dll
+D:\Университет\3 курс 5 семестр\Параллельные вычисления\07\sdi_mega_proj\obj\Debug\net8.0-windows\refint\sdi_mega_proj.dll
+D:\Университет\3 курс 5 семестр\Параллельные вычисления\07\sdi_mega_proj\obj\Debug\net8.0-windows\sdi_mega_proj.pdb
+D:\Университет\3 курс 5 семестр\Параллельные вычисления\07\sdi_mega_proj\obj\Debug\net8.0-windows\sdi_mega_proj.genruntimeconfig.cache
+D:\Университет\3 курс 5 семестр\Параллельные вычисления\07\sdi_mega_proj\obj\Debug\net8.0-windows\ref\sdi_mega_proj.dll

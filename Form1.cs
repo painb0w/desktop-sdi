@@ -7,7 +7,7 @@ namespace sdi_mega_proj
     public partial class Form1 : Form
     {
         private List<Employee> employees;
-        private readonly string textsDirectoryPath = @"C:/University/5 semester/sharp projects/parallel/texts"; // указать путь к директориями с файлами текстов
+        private readonly string textsDirectoryPath = @"D:/Университет/3 курс 5 семестр/Параллельные вычисления/07/InterestingInfo"; // указать путь к директориями с файлами текстов
 
         public Form1()
         {
@@ -115,7 +115,6 @@ namespace sdi_mega_proj
             var plinqResult = await Task.Run(() =>
             {
                 //MessageBox.Show($"thread of Task.Run: {Thread.CurrentThread.ManagedThreadId}");
-                Thread.Sleep(10000);
                 return DataProcessor.FilterOrdersByDatePLINQ(employees, selectedDate, filterType);
             });
 
@@ -153,7 +152,6 @@ namespace sdi_mega_proj
             var stopwatch = Stopwatch.StartNew();
             var sortedEmployees = await Task.Run(() =>
             {
-                Thread.Sleep(10000);
                 return DataProcessor.SortEmployeesByAverageOrderLINQ(employees, ascending);
             });
             stopwatch.Stop();
@@ -203,21 +201,24 @@ namespace sdi_mega_proj
 
             if (WordListGrid.Columns.Count == 0)
             {
-                WordListGrid.Columns.Add("Word", "Word");        
-                WordListGrid.Columns.Add("Frequency", "Frequency"); 
+                WordListGrid.Columns.Add("Word", "Word");
+                WordListGrid.Columns.Add("Frequency", "Frequency");
             }
 
             var stopwatch = Stopwatch.StartNew();
 
             try
             {
+                ApplySearchButton.Enabled = false;
+                ApplySearchButton.Text = "Searching words ...";
                 var wordFrequencies = await Task.Run(() =>
                 {
-                    Thread.Sleep(10000);
-                    return TextAnalysisHelper.ProcessTexts(files, words);
+                    return TextAnalysisHelper.ProcessTexts(files, words).ConfigureAwait(true).GetAwaiter().GetResult();
                 });
 
                 stopwatch.Stop();
+                ApplySearchButton.Enabled = true;
+                ApplySearchButton.Text = "Search";
 
                 Invoke((MethodInvoker)delegate
                 {
@@ -233,6 +234,35 @@ namespace sdi_mega_proj
             {
                 MessageBox.Show($"An error while text processing occured: {ex.Message}");
             }
+        }
+
+        private void DepthTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private async void StartCrawlerButton_Click(object sender, EventArgs e)
+        {
+            string url = StartUrlTextBox.Text;
+            if (string.IsNullOrEmpty(url))
+            {
+                MessageBox.Show("Enter words for search first !");
+                return;
+            }
+            int depth = int.Parse(DepthTextBox.Text);
+            if (string.IsNullOrEmpty(DepthTextBox.Text))
+            {
+                MessageBox.Show("Enter words for search first !");
+                return;
+            }
+            Crawler crawler = new Crawler(url, depth);
+            StartCrawlerButton.Enabled = false;
+            StartCrawlerButton.Text = "Crawling";
+            await crawler.Crawl();
+            await crawler.SaveToJsonAsync("crawlerResult.json");
+            await crawler.LoadDataFromJsonAsync("crawlerResult.json", CrawlerInfoGrid);
+            StartCrawlerButton.Enabled = true;
+            StartCrawlerButton.Text = "Start crawler";
         }
     }
 }

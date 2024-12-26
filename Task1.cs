@@ -1,20 +1,15 @@
-﻿using System;
-using System.Collections.Concurrent;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Collections.Concurrent;
 
 public static class TextAnalysisHelper
 {
-    public static Dictionary<string, int> ProcessTexts(string[] files, string[] words)
+    public static async Task<Dictionary<string, int>> ProcessTexts(string[] files, string[] words)
     {
         var wordSet = new HashSet<string>(words, StringComparer.OrdinalIgnoreCase);
 
         // map
-        var localFrequencies = files.AsParallel().Select(file =>
+        var localFrequencies = files.AsParallel().Select(async file =>
         {
-            var text = File.ReadAllText(file);
+            var text = await File.ReadAllTextAsync(file);
 
             return text
                 .Split(new[] { ' ', '\n', '\r', '.', ',', '!', '?', ';', ':', '-', '(', ')' }, StringSplitOptions.RemoveEmptyEntries)
@@ -28,7 +23,7 @@ public static class TextAnalysisHelper
 
         foreach (var freq in localFrequencies)
         {
-            foreach (var kvp in freq)
+            foreach (var kvp in await freq)
             {
                 globalFrequencies.AddOrUpdate(kvp.Key, kvp.Value, (key, oldValue) => oldValue + kvp.Value);
             }

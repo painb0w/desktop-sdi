@@ -9,7 +9,8 @@
       "sdi_mega_proj/1.0.0": {
         "dependencies": {
           "Bogus": "35.6.1",
-          "Faker.Net": "2.0.163"
+          "Faker.Net": "2.0.163",
+          "HtmlAgilityPack": "1.11.71"
         },
         "runtime": {
           "sdi_mega_proj.dll": {}
@@ -36,6 +37,14 @@
         "resources": {
           "lib/net60/de-DE/Faker.Net.6.0.resources.dll": {
             "locale": "de-DE"
+          }
+        }
+      },
+      "HtmlAgilityPack/1.11.71": {
+        "runtime": {
+          "lib/netstandard2.0/HtmlAgilityPack.dll": {
+            "assemblyVersion": "1.11.71.0",
+            "fileVersion": "1.11.71.0"
           }
         }
       },
@@ -66,6 +75,13 @@
       "sha512": "sha512-nQZA+V19Jf6tSeFnuRWpoVZzSHRmtfOYAnX5RbkY6+HBHpLg55DYTnxUSXeFHpmsgQzmkjG7Ucomk7FisJnfhA==",
       "path": "faker.net/2.0.163",
       "hashPath": "faker.net.2.0.163.nupkg.sha512"
+    },
+    "HtmlAgilityPack/1.11.71": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-HlEThQBnob4/29DIiyrPSYlGXXSZUtOH7571PRev+yu8FW8n5pdxqHyun+PMm17cp3ovCrxFhXedC+1HUSdRMA==",
+      "path": "htmlagilitypack/1.11.71",
+      "hashPath": "htmlagilitypack.1.11.71.nupkg.sha512"
     },
     "Microsoft.NETCore.Platforms/1.1.0": {
       "type": "package",
